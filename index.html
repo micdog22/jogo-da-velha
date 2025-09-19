@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jogo da Velha — 1 Jogador ou 2 Jogadores</title>
+  <meta name="description" content="Jogo da Velha (Tic-Tac-Toe) para 1 jogador vs CPU (IA imbatível) ou 2 jogadores. Escolha X ou O, tema claro/escuro, visual moderno.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='48'%3E%F0%9F%94%B1%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1 class="title">Jogo da Velha</h1>
+      <div class="controls">
+        <button id="themeToggle" class="btn ghost" aria-label="Alternar tema">Tema</button>
+        <button id="openSettings" class="btn ghost" aria-label="Abrir configurações">Configurações</button>
+        <a class="btn outline" href="README.md" target="_blank" rel="noopener">README</a>
+        <a class="btn outline" href="LICENSE" target="_blank" rel="noopener">Licença</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel status-panel" aria-live="polite">
+        <div class="mode-pill"><span id="modeLabel">CPU</span> • <span id="symbolLabel">X</span></div>
+        <div class="status-line"><span id="status">Sua vez</span></div>
+        <div class="score">
+          <div class="score-box"><span>Jogador X</span><strong id="scoreX">0</strong></div>
+          <div class="score-box"><span>Empates</span><strong id="scoreT">0</strong></div>
+          <div class="score-box"><span>Jogador O</span><strong id="scoreO">0</strong></div>
+        </div>
+      </section>
+
+      <section class="board" id="board" role="grid" aria-label="Tabuleiro do jogo da velha">
+        <!-- 9 células -->
+      </section>
+
+      <section class="actions">
+        <button id="btnNovo" class="btn primary">Nova Partida</button>
+        <button id="btnReset" class="btn danger">Zerar Placar</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Projeto estático para GitHub Pages</span>
+      <a href="https://github.com/" target="_blank" rel="noopener">Abrir no GitHub</a>
+    </footer>
+  </div>
+
+  <!-- Modal de configuração -->
+  <dialog id="settingsDialog" class="dialog">
+    <form method="dialog" class="dialog-card" id="settingsForm">
+      <h2>Configurações</h2>
+      <div class="grid-2">
+        <div class="field">
+          <label class="label">Modo de jogo</label>
+          <label class="radio"><input type="radio" name="mode" value="cpu" checked> 1 Jogador (vs CPU)</label>
+          <label class="radio"><input type="radio" name="mode" value="pvp"> 2 Jogadores</label>
+        </div>
+        <div class="field">
+          <label class="label">Símbolo do Jogador 1</label>
+          <label class="radio"><input type="radio" name="symbol" value="X" checked> X</label>
+          <label class="radio"><input type="radio" name="symbol" value="O"> O</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Dificuldade da CPU</label>
+        <select name="difficulty" id="difficulty">
+          <option value="hard" selected>Imbatível</option>
+          <option value="normal">Normal</option>
+          <option value="easy">Fácil</option>
+        </select>
+      </div>
+
+      <menu class="dialog-actions">
+        <button class="btn ghost" value="cancel">Cancelar</button>
+        <button class="btn primary" value="confirm">Aplicar</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
