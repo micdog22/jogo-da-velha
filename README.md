@@ -1,4 +1,4 @@
-# Jogo da Velha — Web (1 Jogador vs CPU ou 2 Jogadores)
+# Jogo da Velha - Web (1 Jogador vs CPU ou 2 Jogadores)
 
 Jogo da Velha responsivo e moderno, feito com HTML, CSS e JavaScript puro. Oferece dois modos de jogo (1 jogador vs CPU com IA e 2 jogadores locais), opção de escolher X ou O, placar persistente, três níveis de dificuldade para a CPU e alternância de tema claro/escuro.
 
